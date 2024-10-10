@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { UserContext } from "./userContext";
 
 function LoginPage() {
-  const { username, setUsername, setTasks } = useContext(UserContext); // Agregar setTasks al contexto
+  const { username, setUsername, setTasks } = useContext(UserContext);
   const [loading, setLoading] = useState(false); // Estado para el estado de carga de tareas
   const [errorModal, setErrorModal] = useState(false); // Estado para mostrar el modal de error
   const navigate = useNavigate(); // Hook para redirigir programáticamente
@@ -46,7 +46,7 @@ function LoginPage() {
         if (resp.ok) {
           // Si el usuario se crea exitosamente, redirigir a la página de tareas
           setErrorModal(false);
-          navigate(`/todos/${username}`); // Usar navigate para redirigir
+          navigate(`/todos/${username}`); 
         } else {
           console.error("Error al crear el usuario");
         }

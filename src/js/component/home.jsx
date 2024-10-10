@@ -5,7 +5,7 @@ import { LuPenSquare } from "react-icons/lu";
 
 
 function Home() {
-    const { tasks = [], setTasks, username } = useContext(UserContext); // Asegúrate que tasks tenga un array vacío como valor por defecto
+    const { tasks = [], setTasks, username } = useContext(UserContext); 
     const [inputValue, setInputValue] = useState(''); // Para almacenar el valor de la nueva tarea
     const [hasError, setHasError] = useState(false); // Para manejar errores
     const [errorMsg, setErrorMsg] = useState(''); // Para mostrar mensajes de error
@@ -24,7 +24,6 @@ function Home() {
             })
             .then(resp => resp.json())
             .then(data => {
-                // La respuesta del servidor incluye la tarea con su id
                 setTasks([...tasks, data]); // Actualiza las tareas locales
                 setInputValue(''); // Resetea el input
             })
